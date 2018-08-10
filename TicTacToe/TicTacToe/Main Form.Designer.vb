@@ -58,7 +58,6 @@ Partial Class frmMain
         Me.btn2.Name = "btn2"
         Me.btn2.Size = New System.Drawing.Size(75, 75)
         Me.btn2.TabIndex = 1
-        Me.btn2.Text = " "
         Me.btn2.UseVisualStyleBackColor = True
         '
         'btn3
@@ -69,7 +68,6 @@ Partial Class frmMain
         Me.btn3.Name = "btn3"
         Me.btn3.Size = New System.Drawing.Size(75, 75)
         Me.btn3.TabIndex = 2
-        Me.btn3.Text = " "
         Me.btn3.UseVisualStyleBackColor = True
         '
         'btn4
@@ -80,7 +78,6 @@ Partial Class frmMain
         Me.btn4.Name = "btn4"
         Me.btn4.Size = New System.Drawing.Size(75, 75)
         Me.btn4.TabIndex = 3
-        Me.btn4.Text = " "
         Me.btn4.UseVisualStyleBackColor = True
         '
         'btn5
@@ -91,7 +88,6 @@ Partial Class frmMain
         Me.btn5.Name = "btn5"
         Me.btn5.Size = New System.Drawing.Size(75, 75)
         Me.btn5.TabIndex = 4
-        Me.btn5.Text = " "
         Me.btn5.UseVisualStyleBackColor = True
         '
         'btn6
@@ -102,7 +98,6 @@ Partial Class frmMain
         Me.btn6.Name = "btn6"
         Me.btn6.Size = New System.Drawing.Size(75, 75)
         Me.btn6.TabIndex = 5
-        Me.btn6.Text = " "
         Me.btn6.UseVisualStyleBackColor = True
         '
         'btn7
@@ -113,7 +108,6 @@ Partial Class frmMain
         Me.btn7.Name = "btn7"
         Me.btn7.Size = New System.Drawing.Size(75, 75)
         Me.btn7.TabIndex = 6
-        Me.btn7.Text = " "
         Me.btn7.UseVisualStyleBackColor = True
         '
         'btn8
@@ -124,7 +118,6 @@ Partial Class frmMain
         Me.btn8.Name = "btn8"
         Me.btn8.Size = New System.Drawing.Size(75, 75)
         Me.btn8.TabIndex = 7
-        Me.btn8.Text = " "
         Me.btn8.UseVisualStyleBackColor = True
         '
         'btn9
@@ -135,7 +128,6 @@ Partial Class frmMain
         Me.btn9.Name = "btn9"
         Me.btn9.Size = New System.Drawing.Size(75, 75)
         Me.btn9.TabIndex = 8
-        Me.btn9.Text = " "
         Me.btn9.UseVisualStyleBackColor = True
         '
         'MenuStrip1
@@ -157,13 +149,13 @@ Partial Class frmMain
         'NewGameToolStripMenuItem
         '
         Me.NewGameToolStripMenuItem.Name = "NewGameToolStripMenuItem"
-        Me.NewGameToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewGameToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.NewGameToolStripMenuItem.Text = "&New game"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(131, 22)
         Me.ExitToolStripMenuItem.Text = "E&xit"
         '
         'HelpToolStripMenuItem
