@@ -35,23 +35,23 @@ Public Class frmMain
     End Sub
 
     ' Boolean check to see if the move wins the game
-    Private Function CheckForWin() As Boolean
-        ' Check all 8 possible wins
-        If btn1.Text = "O" AndAlso btn2.Text = "O" AndAlso btn3.Text = "O" Then
+    Private Function CheckForWin(ByVal player As String) As Boolean
+        ' Check all possible wins
+        If btn1.Text = player AndAlso btn2.Text = player AndAlso btn3.Text = player Then
             Return True
-        ElseIf btn4.Text = "O" AndAlso btn5.Text = "O" AndAlso btn6.Text = "O" Then
+        ElseIf btn4.Text = player AndAlso btn5.Text = player AndAlso btn6.Text = player Then
             Return True
-        ElseIf btn7.Text = "O" AndAlso btn8.Text = "O" AndAlso btn9.Text = "O" Then
+        ElseIf btn7.Text = player AndAlso btn8.Text = player AndAlso btn9.Text = player Then
             Return True
-        ElseIf btn1.Text = "O" AndAlso btn4.Text = "O" AndAlso btn7.Text = "O" Then
+        ElseIf btn1.Text = player AndAlso btn4.Text = player AndAlso btn7.Text = player Then
             Return True
-        ElseIf btn2.Text = "O" AndAlso btn5.Text = "O" AndAlso btn8.Text = "O" Then
+        ElseIf btn2.Text = player AndAlso btn5.Text = player AndAlso btn8.Text = player Then
             Return True
-        ElseIf btn3.Text = "O" AndAlso btn6.Text = "O" AndAlso btn9.Text = "O" Then
+        ElseIf btn3.Text = player AndAlso btn6.Text = player AndAlso btn9.Text = player Then
             Return True
-        ElseIf btn1.Text = "O" AndAlso btn5.Text = "O" AndAlso btn9.Text = "O" Then
+        ElseIf btn1.Text = player AndAlso btn5.Text = player AndAlso btn9.Text = player Then
             Return True
-        ElseIf btn3.Text = "O" AndAlso btn5.Text = "O" AndAlso btn7.Text = "O" Then
+        ElseIf btn3.Text = player AndAlso btn5.Text = player AndAlso btn7.Text = player Then
             Return True
         Else
             Return False
@@ -68,14 +68,54 @@ Public Class frmMain
         End If
     End Sub
 
+    ' Ask the losing player if they want to play again
+    Private Sub ComputerWins()
+        Dim result As Integer = MessageBox.Show("You've lost! Play again?", "Defeat!", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            Me.Close()
+        ElseIf result = DialogResult.Yes Then
+            StartNewGame()
+        End If
+    End Sub
+
+    Private Sub ComputerTurn()
+        'Check for corners, the center, or sides to block player
+        If btn1.Text = String.Empty Then
+            btn1.Text = "X"
+        ElseIf btn3.Text = String.Empty Then
+            btn3.Text = "X"
+        ElseIf btn7.Text = String.Empty Then
+            btn7.Text = "X"
+        ElseIf btn9.Text = String.Empty Then
+            btn9.Text = "X"
+        ElseIf btn5.Text = String.Empty Then
+            btn5.Text = "X"
+        ElseIf btn2.Text = String.Empty Then
+            btn2.Text = "X"
+        ElseIf btn4.Text = String.Empty Then
+            btn4.Text = "X"
+        ElseIf btn6.Text = String.Empty Then
+            btn6.Text = "X"
+        ElseIf btn8.Text = String.Empty Then
+            btn8.Text = "X"
+        End If
+
+        ' Check to see if the computer won
+        If CheckForWin("X") Then
+            ComputerWins()
+        End If
+    End Sub
+
     ' Respond when btn1 is clicked clicked
     Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btn1.Click
         If btn1.Text = String.Empty Then
             btn1.Text = "O"
         End If
 
-        If CheckForWin() Then
+        If CheckForWin("O") Then
             PlayerWins()
+        Else
+            ComputerTurn()
         End If
     End Sub
 
@@ -85,8 +125,10 @@ Public Class frmMain
             btn2.Text = "O"
         End If
 
-        If CheckForWin() Then
+        If CheckForWin("O") Then
             PlayerWins()
+        Else
+            ComputerTurn()
         End If
     End Sub
 
@@ -96,8 +138,10 @@ Public Class frmMain
             btn3.Text = "O"
         End If
 
-        If CheckForWin() Then
+        If CheckForWin("O") Then
             PlayerWins()
+        Else
+            ComputerTurn()
         End If
     End Sub
 
@@ -107,8 +151,10 @@ Public Class frmMain
             btn4.Text = "O"
         End If
 
-        If CheckForWin() Then
+        If CheckForWin("O") Then
             PlayerWins()
+        Else
+            ComputerTurn()
         End If
     End Sub
 
@@ -118,8 +164,10 @@ Public Class frmMain
             btn5.Text = "O"
         End If
 
-        If CheckForWin() Then
+        If CheckForWin("O") Then
             PlayerWins()
+        Else
+            ComputerTurn()
         End If
     End Sub
 
@@ -129,8 +177,10 @@ Public Class frmMain
             btn6.Text = "O"
         End If
 
-        If CheckForWin() Then
+        If CheckForWin("O") Then
             PlayerWins()
+        Else
+            ComputerTurn()
         End If
     End Sub
 
@@ -140,8 +190,10 @@ Public Class frmMain
             btn7.Text = "O"
         End If
 
-        If CheckForWin() Then
+        If CheckForWin("O") Then
             PlayerWins()
+        Else
+            ComputerTurn()
         End If
     End Sub
 
@@ -151,8 +203,10 @@ Public Class frmMain
             btn8.Text = "O"
         End If
 
-        If CheckForWin() Then
+        If CheckForWin("O") Then
             PlayerWins()
+        Else
+            ComputerTurn()
         End If
     End Sub
 
@@ -162,8 +216,10 @@ Public Class frmMain
             btn9.Text = "O"
         End If
 
-        If CheckForWin() Then
+        If CheckForWin("O") Then
             PlayerWins()
+        Else
+            ComputerTurn()
         End If
     End Sub
 End Class
